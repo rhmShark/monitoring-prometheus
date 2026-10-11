@@ -1,0 +1,15 @@
+global:
+  telegram_api_url: "https://api.telegram.org"
+
+route:
+  receiver: 'telegram_receiver'
+  group_wait: 10s
+  group_interval: 1m
+  repeat_interval: 1h
+
+receivers:
+  - name: 'telegram_receiver'
+    telegram_configs:
+      - bot_token_file: '/etc/alertmanager/.telegram_bot_token'
+        chat_id: 1649780617
+        parse_mode: 'HTML'

@@ -1,0 +1,11 @@
+groups:
+  - name: test-alerts
+    rules:
+      - alert: TestAlert
+        expr: up == 1
+        for: 1m
+        labels:
+          severity: critical
+        annotations:
+          summary: "Prometheus Test Alert"
+          description: "This is a test alert to verify Telegram integration is working!"
